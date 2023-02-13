@@ -68,6 +68,9 @@ def main():
         mismatch = find_mismatch(line)
         print(mismatch)
     elif "I" in choice:
+        text = input()
+        mismatch = find_mismatch(text)
+
         if not mismatch:
             print("Success")
         else:
