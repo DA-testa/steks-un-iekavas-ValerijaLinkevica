@@ -51,32 +51,29 @@ def find_mismatch(text):
 
 def main():
     # print("Input text from file or input (F/I): ")
-    # choice = input()
+    choice = input()
 
-    text = input()
-    mismatch = find_mismatch(text)
+    # text = input()
+    # mismatch = find_mismatch(text)
 
-    if not mismatch:
-        print("Success")
-    else:
-        print(mismatch)
-
-    # if "F" in choice:
-    #     # read from file
-    #     file = open('0.txt', 'r')
-    #     line = file.readline()
-    #     mismatch = find_mismatch(line)
-    #     print(mismatch)
-    # elif "I" in choice:
-    #     text = input()
-    #     mismatch = find_mismatch(text)
-    #     print(mismatch)
-#         if "None" == mismatch:
-#             print("Success")
-#         else:
-#             print(mismatch)
+    # if not mismatch:
+    #     print("Success")
     # else:
-    #     print("Error in input choice")
+    #     print(mismatch)
+
+    if "F" in choice:
+        # read from file
+        file = open('*.txt', 'r')
+        line = file.readline()
+        mismatch = find_mismatch(line)
+        print(mismatch)
+    elif "I" in choice:
+        if not mismatch:
+            print("Success")
+        else:
+            print(mismatch)
+    else:
+        print("Error in input choice")
 
 
 if __name__ == "__main__":
