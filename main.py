@@ -19,30 +19,6 @@ def find_mismatch(text):
         if next in ")]}":
             if not opening_brackets_stack:
                 return 1
-            # elif ")" in next:
-            #     if "(" in opening_brackets_stack.pop():
-            #         if i+1 == len(text):
-            #             return "Success"
-            #         else:
-            #             pass
-            #     else:
-            #         return i + 1
-            # elif "}" in next:
-            #     if "{" in opening_brackets_stack.pop():
-            #         if i+1 == len(text):
-            #             return "Success"
-            #         else:
-            #             pass
-            #     else:
-            #         return i + 1
-            # elif "]" in next:
-            #     if "[" in opening_brackets_stack.pop():
-            #         if i+1 == len(text):
-            #             return "Success"
-            #         else:
-            #             pass
-            #     else:
-            #         return i + 1
             else:
                 if are_matching(opening_brackets_stack.pop(), next):
                     if i+1 == len(text):
