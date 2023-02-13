@@ -56,10 +56,7 @@ def main():
     text = input()
     mismatch = find_mismatch(text)
 
-    if "None" == mismatch:
-        print("Success")
-    else:
-        print(mismatch)
+    print(mismatch)
 
     # if "F" in choice:
     #     # read from file
