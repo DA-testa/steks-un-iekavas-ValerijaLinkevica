@@ -66,7 +66,11 @@ def main():
         file = open('*.txt', 'r')
         line = file.readline()
         mismatch = find_mismatch(line)
-        print(mismatch)
+        
+        if not mismatch:
+            print("Success")
+        else:
+            print(mismatch)
     elif "I" in choice:
         text = input()
         mismatch = find_mismatch(text)
