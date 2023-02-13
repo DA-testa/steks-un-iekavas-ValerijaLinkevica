@@ -13,33 +13,38 @@ def find_mismatch(text):
     opening_brackets_stack = []
     for i, next in enumerate(text):
         if next in "([{":
-            # Process opening bracket, write your code here
             opening_brackets_stack.append(next)
             pass
 
         if next in ")]}":
-            # Process closing bracket, write your code here
             if not opening_brackets_stack:
                 return 1
-            elif ")" in next:
-                if "(" in opening_brackets_stack.pop():
-                    #opening_brackets_stack.pop()
-                    if i+1 == len(text):
-                        return "Success"
-                    else:
-                        pass
-                else:
-                    return i + 1
-            elif "}" in next:
-                if "{" in opening_brackets_stack.pop():
-                    if i+1 == len(text):
-                        return "Success"
-                    else:
-                        pass
-                else:
-                    return i + 1
-            elif "]" in next:
-                if "[" in opening_brackets_stack.pop():
+            # elif ")" in next:
+            #     if "(" in opening_brackets_stack.pop():
+            #         if i+1 == len(text):
+            #             return "Success"
+            #         else:
+            #             pass
+            #     else:
+            #         return i + 1
+            # elif "}" in next:
+            #     if "{" in opening_brackets_stack.pop():
+            #         if i+1 == len(text):
+            #             return "Success"
+            #         else:
+            #             pass
+            #     else:
+            #         return i + 1
+            # elif "]" in next:
+            #     if "[" in opening_brackets_stack.pop():
+            #         if i+1 == len(text):
+            #             return "Success"
+            #         else:
+            #             pass
+            #     else:
+            #         return i + 1
+            else:
+                if are_matching(opening_brackets_stack.pop(), next):
                     if i+1 == len(text):
                         return "Success"
                     else:
@@ -50,23 +55,15 @@ def find_mismatch(text):
 
 
 def main():
-    # print("Input text from file or input (F/I): ")
     choice = input()
 
-    # text = input()
-    # mismatch = find_mismatch(text)
-
-    # if not mismatch:
-    #     print("Success")
-    # else:
-    #     print(mismatch)
-
     if "F" in choice:
-        # read from file
-        file = open('*.txt', 'r')
+        filename = input()
+        usefile = filename + '.txt'
+        file = open(usefile, 'r')
         line = file.readline()
         mismatch = find_mismatch(line)
-        
+
         if not mismatch:
             print("Success")
         else:
